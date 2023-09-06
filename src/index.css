@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.darken-image {
+    filter: brightness(0.4); /* Adjust the value as needed to control the darkness */
+  }
