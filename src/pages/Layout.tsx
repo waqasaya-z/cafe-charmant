@@ -4,13 +4,14 @@ import Footer from '../components/Footer'
 
 const Layout = () => {
   return (
-    <>
-    <div className='bg-homepage-background w-full h-full bg-cover bg-center bg-no-repeat darken-image'>
-    <Navbar />
-    <Outlet />
-    <Footer />
+    <div className='relative'>
+    <div className='absolute inset-0 bg-homepage-background bg-cover bg-center bg-no-repeat darken-image'></div>
+    <div className='relative z-10'>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </div>
-    </>
+  </div>
   )
 }
 
