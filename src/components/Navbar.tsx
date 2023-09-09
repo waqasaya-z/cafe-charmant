@@ -1,7 +1,10 @@
 import { ShoppingCartIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import CartSlider from './CartSlider';
 
 const Navbar = () => {
+ const [cart,setCart] = useState(false);
   return (
     <>
     <header className=' bg-opacity-100  py-5 '>
@@ -15,7 +18,8 @@ const Navbar = () => {
             </div>
 
             <div className='flex items-center gap-x-2'>
-            <button className='flex items-center gap-x-2 pr-8 ' > <ShoppingCartIcon className='h-7 w-7 text-white' /> </button>
+            <button className='flex items-center gap-x-2 pr-8 ' onClick={() => setCart(!cart)} > <ShoppingCartIcon className='h-7 w-7 text-white' /> </button>
+            <div className=' z-0 '> {cart && <CartSlider />  } </div>  
             </div>
         </nav>
     </header>
